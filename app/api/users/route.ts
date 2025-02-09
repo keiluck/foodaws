@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server';
 
 const prisma = new PrismaClient();
 
-// 处理 GET 请求
 export async function GET() {
   try {
     const users = await prisma.user.findMany();
@@ -16,7 +15,6 @@ export async function GET() {
   }
 }
 
-// 处理 POST 请求
 export async function POST(request: Request) {
   try {
     const { name, email } = await request.json();
@@ -43,3 +41,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
