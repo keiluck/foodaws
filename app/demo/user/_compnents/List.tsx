@@ -29,7 +29,7 @@ function List() {
       }, []);
   return (
     <div className='list'>
-        ul lili
+        ul lilijjjj
       <ul>
         {data.map((item) => <li key={item.id}>{item.name}{item.email}</li>)}
 
