@@ -1,10 +1,10 @@
+'use client'
 import React from 'react'
 import { Image } from 'antd-mobile'
 
 function page() {
   return (
     <div>
-      test page
     <div>
       <Image
             src="/images/top_02.gif"
