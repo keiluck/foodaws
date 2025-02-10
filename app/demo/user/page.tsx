@@ -1,5 +1,6 @@
 import React from 'react'
 import List from './_compnents/List';
+import Test from './_compnents/Test';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,8 +12,9 @@ export const metadata: Metadata = {
 function page() {
   return (
     <div>
-      user
+      userddd
       <List />
+      <Test />
     </div>
   )
 }

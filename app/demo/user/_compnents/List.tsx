@@ -71,12 +71,15 @@ function List() {
                     Add User
                 </button>
             </form>
-        ul lilijjjj
+        test
       <ul>
         {data.map((item) => <li key={item.id}>{item.name}{item.email}</li>)}
 
         
       </ul>
+
+
+      
 
       {/* <ul>
         {Array.isArray(Item) && Item.map((item) => (
