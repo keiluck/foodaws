@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    target: 'serverless', // 使用 serverless 模式
+    output: 'standalone', // This is the modern equivalent for serverless deployments
 }
 
 module.exports = nextConfig
