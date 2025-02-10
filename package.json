@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^3.9.0",
+    "@prisma/client": "^5.0.0",
     "antd-mobile": "^5.38.1",
     "next": "13.5.8",
     "prisma": "^5.0.0",

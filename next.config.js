@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone', // This is the modern equivalent for serverless deployments
+    // Remove the export output since we need server-side features
 }
 
 module.exports = nextConfig
