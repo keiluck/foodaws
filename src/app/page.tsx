@@ -3,8 +3,6 @@ import Link from 'next/link'
 
 export default function Page() {
   return <div>
-    <Link href="/merchant">merchant</Link><br/>
-    <Link href="/user">user</Link><br/>
     <Link href="/test">test</Link><br/>
     <Link href="/demo">demo</Link>
     <h1>Hello, Next.js!</h1></div> 
