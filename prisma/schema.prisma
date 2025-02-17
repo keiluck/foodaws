@@ -24,3 +24,37 @@ model Demo {
   name  String
   email String @unique
 }
+
+
+model Goods {
+  id       String @id @unique @default(uuid())
+  name     String
+  desc     String @default("")
+  content  String @default("")
+  createdAt DateTime @default(now()) @map("create_at")
+  updateAt  DateTime @updatedAt @map("update_at")
+
+  @@map("products")
+}
+
+model Articles {
+  id        String @id @unique @default(uuid())
+  title     String
+  desc      String?  @default("")
+  content   String?  @default("")
+  image     String?  @default("")
+  createdAt DateTime @default(now()) 
+  updateAt  DateTime @default(now()) @updatedAt() @map("update_at")
+
+  @@map("articles")
+}
+
+
+model TestList {
+  id          String  @id @unique @default(uuid())
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+
+  @@map("testList")
+}

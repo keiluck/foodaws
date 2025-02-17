@@ -4,15 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^5.22.0",
+    "@wangeditor/editor-for-react": "^1.0.6",
+    "antd": "^5.24.0",
     "antd-mobile": "^5.38.1",
     "next": "13.5.8",
-    "prisma": "^5.0.0",
+    "prisma": "^5.22.0",
     "react": "^18",
     "react-dom": "^18"
   },

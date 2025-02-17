@@ -1,11 +1,17 @@
 
+
+"use client"
+import Navigation from "@/components/home/Navigation"
+import Main from "@/components/home/Main"
 import Link from 'next/link'
 
 export default function Page() {
   return <div>
-    <Link href="/test">test</Link><br/>
-    <Link href="/demo">demo</Link>
-    <h1>Hello, Next.js!</h1></div> 
+    {/* <Link href="/test">test</Link><br/>
+    <Link href="/demo">demo</Link> */}
+        <Navigation />
+        <Main />
+        </div>
 
 }
 
