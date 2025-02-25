@@ -8,9 +8,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// datasource db {
+//   provider = "mysql"
+//   url      = env("DATABASE_URL")
+// }
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+  ssl: {
+    ca: "./rds-ca-2019-root.pem"
+    
+  }
 }
 
 model User {
@@ -27,14 +36,42 @@ model Demo {
 
 
 model Goods {
-  id       String @id @unique @default(uuid())
-  name     String
-  desc     String @default("")
-  content  String @default("")
-  createdAt DateTime @default(now()) @map("create_at")
-  updateAt  DateTime @updatedAt @map("update_at")
+  id          String     @id @default(uuid())
+  name        String
+  desc        String     @default("")
+  content     String     @default("")
+  stock       Int        @default(0)
+  images      Json       // 图片URL数组
+  category    Category?  @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  specs       Spec[]
+  createdAt   DateTime   @default(now()) @map("create_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
 
   @@map("products")
+}
+
+model Category {
+  id          String     @id @default(uuid())
+  name        String
+  description String?
+  parent      Category?  @relation("CategoryChildren", fields: [parentId], references: [id])
+  parentId    String?
+  children    Category[] @relation("CategoryChildren")
+  goods       Goods[]
+
+  @@index([parentId])
+}
+
+model Spec {
+  id       String  @id @default(uuid())
+  type     String  // 规格类型（如：辣度、分量、加料）
+  name     String  // 显示名称
+  options  Json    // 规格选项
+  goods    Goods   @relation(fields: [goodsId], references: [id])
+  goodsId  String
+
+  @@index([goodsId])
 }
 
 model Articles {
@@ -50,8 +87,9 @@ model Articles {
 }
 
 
-model TestList {
-  id          String  @id @unique @default(uuid())
+model Image {
+  id          String   @id @unique @default(uuid())
+  url         String
   name        String
   description String
   createdAt   DateTime @default(now())
