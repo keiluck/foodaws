@@ -20,9 +20,7 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  // ssl = {
-  //   ca: "./rds-ca-2019-root.pem"
-  // }
+  // ssl = {ca: "./rds-ca-2019-root.pem"}
 } 
 
 model User {
